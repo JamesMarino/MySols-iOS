@@ -13,7 +13,9 @@
 		1AC17D601B63168300AD5C52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D5E1B63168300AD5C52 /* Info.plist */; };
 		1AC17D611B63168300AD5C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D5F1B63168300AD5C52 /* main.m */; };
 		1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D631B63169000AD5C52 /* AppDelegate.m */; };
-		1AC17D671B63169900AD5C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D661B63169900AD5C52 /* ViewController.m */; };
+		1AC17D671B63169900AD5C52 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D661B63169900AD5C52 /* Login.m */; };
+		1AC17D691B631A0300AD5C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */; };
+		1AC17D6B1B631A0C00AD5C52 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC17D6A1B631A0C00AD5C52 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +27,10 @@
 		1AC17D5F1B63168300AD5C52 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Support/main.m; sourceTree = "<group>"; };
 		1AC17D621B63169000AD5C52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Delegates/AppDelegate.h; sourceTree = "<group>"; };
 		1AC17D631B63169000AD5C52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Delegates/AppDelegate.m; sourceTree = "<group>"; };
-		1AC17D651B63169900AD5C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Views/ViewController.h; sourceTree = "<group>"; };
-		1AC17D661B63169900AD5C52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Views/ViewController.m; sourceTree = "<group>"; };
+		1AC17D651B63169900AD5C52 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Login.h; path = Views/Login.h; sourceTree = "<group>"; };
+		1AC17D661B63169900AD5C52 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Login.m; path = Views/Login.m; sourceTree = "<group>"; };
+		1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1AC17D6A1B631A0C00AD5C52 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC17D6B1B631A0C00AD5C52 /* Security.framework in Frameworks */,
+				1AC17D691B631A0300AD5C52 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,7 @@
 				1AC17D5B1B63164E00AD5C52 /* Views */,
 				1AC17D5A1B63164800AD5C52 /* Images */,
 				1AC17D321B63153500AD5C52 /* Support */,
+				1AC17D6C1B631A1000AD5C52 /* Frameworks */,
 			);
 			path = MySOLS;
 			sourceTree = "<group>";
@@ -88,8 +95,8 @@
 		1AC17D5B1B63164E00AD5C52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D651B63169900AD5C52 /* ViewController.h */,
-				1AC17D661B63169900AD5C52 /* ViewController.m */,
+				1AC17D651B63169900AD5C52 /* Login.h */,
+				1AC17D661B63169900AD5C52 /* Login.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -110,6 +117,15 @@
 				1AC17D411B63153500AD5C52 /* LaunchScreen.xib */,
 			);
 			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		1AC17D6C1B631A1000AD5C52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AC17D6A1B631A0C00AD5C52 /* Security.framework */,
+				1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC17D671B63169900AD5C52 /* ViewController.m in Sources */,
+				1AC17D671B63169900AD5C52 /* Login.m in Sources */,
 				1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */,
 				1AC17D611B63168300AD5C52 /* main.m in Sources */,
 			);

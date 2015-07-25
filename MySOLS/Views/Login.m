@@ -1,18 +1,10 @@
-//
-//  ViewController.m
-//  MySOLS
-//
-//  Created by James Marino on 25/07/2015.
-//  Copyright (c) 2015 GRAVVITY. All rights reserved.
-//
+#import "Login.h"
 
-#import "ViewController.h"
-
-@interface ViewController ()
+@interface Login ()
 
 @end
 
-@implementation ViewController
+@implementation Login
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
