@@ -8,7 +8,7 @@
         <!--Login-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Login" customClass="Login" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="vXZ-lx-hvc" userLabel="Login" customClass="LoginView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -32,6 +32,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoginPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dwW-c4-bAF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QX-Kd-PFE" userLabel="Heading">
                                 <rect key="frame" x="16" y="20" width="568" height="81"/>
@@ -42,6 +45,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uL6-ce-avu">
+                                <rect key="frame" x="0.0" y="315" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,9 +66,47 @@
                             <constraint firstItem="PPD-6y-iF2" firstAttribute="trailing" secondItem="3QX-Kd-PFE" secondAttribute="trailing" id="t2g-Wb-3gb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PasswordField" destination="fyi-Wt-mOM" id="XUu-7Q-MNJ"/>
+                        <outlet property="UsernameField" destination="1IP-Af-hJm" id="W3i-9h-YjA"/>
+                        <outlet property="WebView" destination="uL6-ce-avu" id="T3L-KQ-TNj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--MainView-->
+        <scene sceneID="bjR-HN-190">
+            <objects>
+                <viewController storyboardIdentifier="MainWebView" id="b8D-I5-XL5" userLabel="MainView" customClass="MainView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7rp-FM-Rab"/>
+                        <viewControllerLayoutGuide type="bottom" id="CBd-hv-DfF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Igk-27-9Ag" userLabel="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="7rp-FM-Rab" secondAttribute="bottom" id="7k4-L2-yax"/>
+                            <constraint firstItem="CBd-hv-DfF" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" id="Be3-XS-2uE"/>
+                            <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" id="DVF-nn-Bpx"/>
+                            <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="EP6-iN-aXA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="EGT-JL-dTB" id="lur-hl-i4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ka-hD-vUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="418"/>
         </scene>
     </scenes>
 </document>

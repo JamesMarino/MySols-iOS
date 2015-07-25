@@ -10,12 +10,13 @@
 		1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D3C1B63153500AD5C52 /* Main.storyboard */; };
 		1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D411B63153500AD5C52 /* LaunchScreen.xib */; };
 		1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D581B63164000AD5C52 /* Images.xcassets */; };
-		1AC17D601B63168300AD5C52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D5E1B63168300AD5C52 /* Info.plist */; };
 		1AC17D611B63168300AD5C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D5F1B63168300AD5C52 /* main.m */; };
 		1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D631B63169000AD5C52 /* AppDelegate.m */; };
-		1AC17D671B63169900AD5C52 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D661B63169900AD5C52 /* Login.m */; };
-		1AC17D691B631A0300AD5C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */; };
+		1AC17D671B63169900AD5C52 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D661B63169900AD5C52 /* LoginView.m */; };
 		1AC17D6B1B631A0C00AD5C52 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC17D6A1B631A0C00AD5C52 /* Security.framework */; };
+		1AC17D751B632C6500AD5C52 /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D741B632C6500AD5C52 /* KeyChain.m */; };
+		1AC17D7A1B633DF400AD5C52 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D791B633DF400AD5C52 /* MainView.m */; };
+		1AC17D7D1B6365B300AD5C52 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D7C1B6365B300AD5C52 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +28,16 @@
 		1AC17D5F1B63168300AD5C52 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Support/main.m; sourceTree = "<group>"; };
 		1AC17D621B63169000AD5C52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Delegates/AppDelegate.h; sourceTree = "<group>"; };
 		1AC17D631B63169000AD5C52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Delegates/AppDelegate.m; sourceTree = "<group>"; };
-		1AC17D651B63169900AD5C52 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Login.h; path = Views/Login.h; sourceTree = "<group>"; };
-		1AC17D661B63169900AD5C52 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Login.m; path = Views/Login.m; sourceTree = "<group>"; };
-		1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1AC17D651B63169900AD5C52 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = Views/LoginView.h; sourceTree = "<group>"; };
+		1AC17D661B63169900AD5C52 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = Views/LoginView.m; sourceTree = "<group>"; };
 		1AC17D6A1B631A0C00AD5C52 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1AC17D741B632C6500AD5C52 /* KeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChain.m; path = Classes/KeyChain.m; sourceTree = "<group>"; };
+		1AC17D761B632C7800AD5C52 /* KeyChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KeyChain.h; path = Classes/KeyChain.h; sourceTree = "<group>"; };
+		1AC17D771B633BF700AD5C52 /* Support.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Support.md; path = Support/Support.md; sourceTree = "<group>"; };
+		1AC17D781B633DF400AD5C52 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Views/MainView.h; sourceTree = "<group>"; };
+		1AC17D791B633DF400AD5C52 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Views/MainView.m; sourceTree = "<group>"; };
+		1AC17D7B1B634D8600AD5C52 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		1AC17D7C1B6365B300AD5C52 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +46,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC17D6B1B631A0C00AD5C52 /* Security.framework in Frameworks */,
-				1AC17D691B631A0300AD5C52 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 				1AC17D5B1B63164E00AD5C52 /* Views */,
 				1AC17D5A1B63164800AD5C52 /* Images */,
 				1AC17D321B63153500AD5C52 /* Support */,
+				1AC17D6D1B631CAC00AD5C52 /* Classes */,
 				1AC17D6C1B631A1000AD5C52 /* Frameworks */,
 			);
 			path = MySOLS;
@@ -80,6 +87,7 @@
 			children = (
 				1AC17D5E1B63168300AD5C52 /* Info.plist */,
 				1AC17D5F1B63168300AD5C52 /* main.m */,
+				1AC17D771B633BF700AD5C52 /* Support.md */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -95,8 +103,10 @@
 		1AC17D5B1B63164E00AD5C52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D651B63169900AD5C52 /* Login.h */,
-				1AC17D661B63169900AD5C52 /* Login.m */,
+				1AC17D651B63169900AD5C52 /* LoginView.h */,
+				1AC17D661B63169900AD5C52 /* LoginView.m */,
+				1AC17D781B633DF400AD5C52 /* MainView.h */,
+				1AC17D791B633DF400AD5C52 /* MainView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -123,9 +133,19 @@
 			isa = PBXGroup;
 			children = (
 				1AC17D6A1B631A0C00AD5C52 /* Security.framework */,
-				1AC17D681B631A0300AD5C52 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AC17D6D1B631CAC00AD5C52 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1AC17D7B1B634D8600AD5C52 /* Constants.h */,
+				1AC17D7C1B6365B300AD5C52 /* Constants.m */,
+				1AC17D761B632C7800AD5C52 /* KeyChain.h */,
+				1AC17D741B632C6500AD5C52 /* KeyChain.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC17D601B63168300AD5C52 /* Info.plist in Resources */,
 				1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */,
 				1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */,
 				1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */,
@@ -200,9 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC17D671B63169900AD5C52 /* Login.m in Sources */,
+				1AC17D7A1B633DF400AD5C52 /* MainView.m in Sources */,
+				1AC17D671B63169900AD5C52 /* LoginView.m in Sources */,
+				1AC17D751B632C6500AD5C52 /* KeyChain.m in Sources */,
 				1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */,
 				1AC17D611B63168300AD5C52 /* main.m in Sources */,
+				1AC17D7D1B6365B300AD5C52 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +371,7 @@
 				1AC17D541B63153500AD5C52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  MySOLS
-//
-//  Created by James Marino on 25/07/2015.
-//  Copyright (c) 2015 GRAVVITY. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -17,6 +9,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	// Set Attempts to 0
+	NSInteger attempts = 0;
+	NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
+	[prefrences setInteger:attempts forKey:@"LoginAttempts"];
+	
 	return YES;
 }
 
