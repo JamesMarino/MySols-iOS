@@ -7,50 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC17D351B63153500AD5C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D341B63153500AD5C52 /* main.m */; };
-		1AC17D381B63153500AD5C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D371B63153500AD5C52 /* AppDelegate.m */; };
-		1AC17D3B1B63153500AD5C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D3A1B63153500AD5C52 /* ViewController.m */; };
 		1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D3C1B63153500AD5C52 /* Main.storyboard */; };
-		1AC17D401B63153500AD5C52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D3F1B63153500AD5C52 /* Images.xcassets */; };
 		1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D411B63153500AD5C52 /* LaunchScreen.xib */; };
-		1AC17D4F1B63153500AD5C52 /* MySOLSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D4E1B63153500AD5C52 /* MySOLSTests.m */; };
+		1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D581B63164000AD5C52 /* Images.xcassets */; };
+		1AC17D601B63168300AD5C52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D5E1B63168300AD5C52 /* Info.plist */; };
+		1AC17D611B63168300AD5C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D5F1B63168300AD5C52 /* main.m */; };
+		1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D631B63169000AD5C52 /* AppDelegate.m */; };
+		1AC17D671B63169900AD5C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D661B63169900AD5C52 /* ViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1AC17D491B63153500AD5C52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC17D271B63153500AD5C52 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AC17D2E1B63153500AD5C52;
-			remoteInfo = MySOLS;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1AC17D2F1B63153500AD5C52 /* MySOLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySOLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AC17D331B63153500AD5C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AC17D341B63153500AD5C52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1AC17D361B63153500AD5C52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1AC17D371B63153500AD5C52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1AC17D391B63153500AD5C52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1AC17D3A1B63153500AD5C52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1AC17D3D1B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1AC17D3F1B63153500AD5C52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AC17D421B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1AC17D481B63153500AD5C52 /* MySOLSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySOLSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AC17D4D1B63153500AD5C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AC17D4E1B63153500AD5C52 /* MySOLSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySOLSTests.m; sourceTree = "<group>"; };
+		1AC17D581B63164000AD5C52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Images/Images.xcassets; sourceTree = "<group>"; };
+		1AC17D5E1B63168300AD5C52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = "<group>"; };
+		1AC17D5F1B63168300AD5C52 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Support/main.m; sourceTree = "<group>"; };
+		1AC17D621B63169000AD5C52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Delegates/AppDelegate.h; sourceTree = "<group>"; };
+		1AC17D631B63169000AD5C52 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Delegates/AppDelegate.m; sourceTree = "<group>"; };
+		1AC17D651B63169900AD5C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Views/ViewController.h; sourceTree = "<group>"; };
+		1AC17D661B63169900AD5C52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Views/ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1AC17D2C1B63153500AD5C52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AC17D451B63153500AD5C52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,7 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC17D311B63153500AD5C52 /* MySOLS */,
-				1AC17D4B1B63153500AD5C52 /* MySOLSTests */,
 				1AC17D301B63153500AD5C52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				1AC17D2F1B63153500AD5C52 /* MySOLS.app */,
-				1AC17D481B63153500AD5C52 /* MySOLSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,42 +59,57 @@
 		1AC17D311B63153500AD5C52 /* MySOLS */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D361B63153500AD5C52 /* AppDelegate.h */,
-				1AC17D371B63153500AD5C52 /* AppDelegate.m */,
-				1AC17D391B63153500AD5C52 /* ViewController.h */,
-				1AC17D3A1B63153500AD5C52 /* ViewController.m */,
-				1AC17D3C1B63153500AD5C52 /* Main.storyboard */,
-				1AC17D3F1B63153500AD5C52 /* Images.xcassets */,
-				1AC17D411B63153500AD5C52 /* LaunchScreen.xib */,
-				1AC17D321B63153500AD5C52 /* Supporting Files */,
+				1AC17D5D1B63165F00AD5C52 /* StoryBoards */,
+				1AC17D5C1B63165600AD5C52 /* Delegates */,
+				1AC17D5B1B63164E00AD5C52 /* Views */,
+				1AC17D5A1B63164800AD5C52 /* Images */,
+				1AC17D321B63153500AD5C52 /* Support */,
 			);
 			path = MySOLS;
 			sourceTree = "<group>";
 		};
-		1AC17D321B63153500AD5C52 /* Supporting Files */ = {
+		1AC17D321B63153500AD5C52 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D331B63153500AD5C52 /* Info.plist */,
-				1AC17D341B63153500AD5C52 /* main.m */,
+				1AC17D5E1B63168300AD5C52 /* Info.plist */,
+				1AC17D5F1B63168300AD5C52 /* main.m */,
 			);
-			name = "Supporting Files";
+			name = Support;
 			sourceTree = "<group>";
 		};
-		1AC17D4B1B63153500AD5C52 /* MySOLSTests */ = {
+		1AC17D5A1B63164800AD5C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D4E1B63153500AD5C52 /* MySOLSTests.m */,
-				1AC17D4C1B63153500AD5C52 /* Supporting Files */,
+				1AC17D581B63164000AD5C52 /* Images.xcassets */,
 			);
-			path = MySOLSTests;
+			name = Images;
 			sourceTree = "<group>";
 		};
-		1AC17D4C1B63153500AD5C52 /* Supporting Files */ = {
+		1AC17D5B1B63164E00AD5C52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AC17D4D1B63153500AD5C52 /* Info.plist */,
+				1AC17D651B63169900AD5C52 /* ViewController.h */,
+				1AC17D661B63169900AD5C52 /* ViewController.m */,
 			);
-			name = "Supporting Files";
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1AC17D5C1B63165600AD5C52 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1AC17D621B63169000AD5C52 /* AppDelegate.h */,
+				1AC17D631B63169000AD5C52 /* AppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		1AC17D5D1B63165F00AD5C52 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				1AC17D3C1B63153500AD5C52 /* Main.storyboard */,
+				1AC17D411B63153500AD5C52 /* LaunchScreen.xib */,
+			);
+			name = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,24 +132,6 @@
 			productReference = 1AC17D2F1B63153500AD5C52 /* MySOLS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1AC17D471B63153500AD5C52 /* MySOLSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC17D551B63153500AD5C52 /* Build configuration list for PBXNativeTarget "MySOLSTests" */;
-			buildPhases = (
-				1AC17D441B63153500AD5C52 /* Sources */,
-				1AC17D451B63153500AD5C52 /* Frameworks */,
-				1AC17D461B63153500AD5C52 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1AC17D4A1B63153500AD5C52 /* PBXTargetDependency */,
-			);
-			name = MySOLSTests;
-			productName = MySOLSTests;
-			productReference = 1AC17D481B63153500AD5C52 /* MySOLSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,10 +143,7 @@
 				TargetAttributes = {
 					1AC17D2E1B63153500AD5C52 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					1AC17D471B63153500AD5C52 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 1AC17D2E1B63153500AD5C52;
+						DevelopmentTeam = D474HU5D6W;
 					};
 				};
 			};
@@ -189,7 +161,6 @@
 			projectRoot = "";
 			targets = (
 				1AC17D2E1B63153500AD5C52 /* MySOLS */,
-				1AC17D471B63153500AD5C52 /* MySOLSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -199,16 +170,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC17D601B63168300AD5C52 /* Info.plist in Resources */,
 				1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */,
+				1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */,
 				1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */,
-				1AC17D401B63153500AD5C52 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AC17D461B63153500AD5C52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,29 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC17D3B1B63153500AD5C52 /* ViewController.m in Sources */,
-				1AC17D381B63153500AD5C52 /* AppDelegate.m in Sources */,
-				1AC17D351B63153500AD5C52 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AC17D441B63153500AD5C52 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AC17D4F1B63153500AD5C52 /* MySOLSTests.m in Sources */,
+				1AC17D671B63169900AD5C52 /* ViewController.m in Sources */,
+				1AC17D641B63169000AD5C52 /* AppDelegate.m in Sources */,
+				1AC17D611B63168300AD5C52 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1AC17D4A1B63153500AD5C52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AC17D2E1B63153500AD5C52 /* MySOLS */;
-			targetProxy = 1AC17D491B63153500AD5C52 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1AC17D3C1B63153500AD5C52 /* Main.storyboard */ = {
@@ -299,7 +248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -336,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -347,7 +296,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MySOLS/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/MySOLS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,43 +307,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MySOLS/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/MySOLS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		1AC17D561B63153500AD5C52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MySOLSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySOLS.app/MySOLS";
-			};
-			name = Debug;
-		};
-		1AC17D571B63153500AD5C52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MySOLSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySOLS.app/MySOLS";
 			};
 			name = Release;
 		};
@@ -414,14 +331,6 @@
 			buildConfigurations = (
 				1AC17D531B63153500AD5C52 /* Debug */,
 				1AC17D541B63153500AD5C52 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		1AC17D551B63153500AD5C52 /* Build configuration list for PBXNativeTarget "MySOLSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AC17D561B63153500AD5C52 /* Debug */,
-				1AC17D571B63153500AD5C52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
