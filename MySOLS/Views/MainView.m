@@ -66,7 +66,6 @@
 	
 	// Get current URL
 	NSString *URLString = [[request URL] absoluteString];
-	NSLog(@"URL: %@", URLString);
 
 	// Switch on URL
 	if ([URLString isEqualToString:SOLS_LOGIN_URL]) {

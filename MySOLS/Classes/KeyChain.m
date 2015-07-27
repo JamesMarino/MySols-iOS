@@ -2,8 +2,6 @@
 
 @interface KeyChain ()
 
-
-
 @end
 
 @implementation KeyChain
@@ -35,7 +33,6 @@
 	if (SecItemCopyMatching((__bridge CFDictionaryRef)keychainItem, NULL) == noErr) {
 		
 		// Call update routine
-		NSLog(@"Status: Already Stored");
 		[self updateWithUsername:Username WithPassword:Password];
 		
 	} else {
@@ -46,8 +43,6 @@
 		OSStatus status = SecItemAdd((__bridge CFDictionaryRef)keychainItem, NULL);
 		
 		// If not 0, error has occured
-		NSLog(@"Status: %d", (int)status);
-		
 		if ((int)status == 0) {
 			return (int)status;
 		} else {
@@ -85,16 +80,11 @@
 	// Check if Item Exists
 	if (SecItemCopyMatching((__bridge CFDictionaryRef)keychainItem, NULL) == noErr) {
 		
-		// The item is found
-		NSLog(@"Status: Updating");
-		
 		// Update the keychain item
 		NSMutableDictionary *attributesToUpdate = [NSMutableDictionary dictionary];
 		attributesToUpdate[(__bridge id)kSecValueData] = [Password dataUsingEncoding:NSUTF8StringEncoding];
 		
 		OSStatus status = SecItemUpdate((__bridge CFDictionaryRef)keychainItem, (__bridge CFDictionaryRef)attributesToUpdate);
-		
-		NSLog(@"Status: %d", (int)status);
 		
 		return (int)status;
 		
@@ -131,15 +121,11 @@
 	}
 	@catch (NSException *exception) {
 		// Error Storing Value
-		
-		NSLog(@"Error Storing Value");
 	}
 	
 	// Get Results
 	CFDictionaryRef result = nil;
 	OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)keychainItem, (CFTypeRef *)&result);
-	
-	NSLog(@"Status: %d", (int)status);
 	
 	// Make Empty Dictionary
 	NSDictionary *resultDict = NULL;

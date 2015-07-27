@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6E5AE61B660CC100461F86 /* UOW.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E5AE51B660CC100461F86 /* UOW.png */; };
 		1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D3C1B63153500AD5C52 /* Main.storyboard */; };
 		1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D411B63153500AD5C52 /* LaunchScreen.xib */; };
 		1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D581B63164000AD5C52 /* Images.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A6E5AE51B660CC100461F86 /* UOW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UOW.png; path = Images/UOW.png; sourceTree = "<group>"; };
 		1AC17D2F1B63153500AD5C52 /* MySOLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySOLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC17D3D1B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AC17D421B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		1AC17D5A1B63164800AD5C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1A6E5AE51B660CC100461F86 /* UOW.png */,
 				1AC17D581B63164000AD5C52 /* Images.xcassets */,
 			);
 			name = Images;
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */,
+				1A6E5AE61B660CC100461F86 /* UOW.png in Resources */,
 				1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */,
 				1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */,
 			);

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface LoginView : UIViewController<UIWebViewDelegate>
+@interface LoginView : UIViewController<UIWebViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *UsernameField;
 @property (strong, nonatomic) IBOutlet UITextField *PasswordField;

@@ -18,11 +18,20 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	// If you are Logging in, all defaults and KeyChain should be cleared
-	// [self clearDefaults];
+	// Satus Bar
+	[self setNeedsStatusBarAppearanceUpdate];
 	
-	// Setup Webview
+	// Keyboard
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+								   initWithTarget:self
+								   action:@selector(dismissKeyboard)];
+	
+	[self.view addGestureRecognizer:tap];
+	
+	// Setup Webview / other delegates
 	self.WebView.delegate = self;
+	self.UsernameField.delegate = self;
+	self.PasswordField.delegate = self;
 	
 	// Display Values
 	if ([[NSUserDefaults standardUserDefaults] stringForKey:PROPERTY_VALID_LOGIN]) {
@@ -47,6 +56,28 @@
 	
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField*)textField {
+	
+	if (textField == self.UsernameField) {
+		[self.PasswordField becomeFirstResponder];
+	} else if(textField == self.PasswordField) {
+		[self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+	}
+	
+	return YES;
+}
+
+-(void)dismissKeyboard
+{
+	[self.UsernameField resignFirstResponder];
+	[self.PasswordField resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
@@ -54,6 +85,9 @@
 
 - (IBAction)LoginPressed:(id)sender
 {
+	// End Editing
+	[self.view endEditing:YES];
+	
 	// Check Form Inputs / Setup
 	NSString *ErrorMessage = NULL;
 	BOOL UsernameValid = true, PasswordValid = true;
@@ -99,9 +133,6 @@
 	NSData *passwordData = data[(__bridge id)kSecValueData];
 	password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
 	
-	NSLog(@"Username: %@", username);
-	NSLog(@"Password: %@", password);
-	
 	// Setup URL
 	NSURL *url = [NSURL URLWithString: SOLS_LOGIN_URL];
 	NSString *body = [NSString stringWithFormat: SOLS_LOGIN_POST, username, password];
@@ -139,8 +170,6 @@
 	
 	// Get current URL
 	NSString *URLString = [[request URL] absoluteString];
-	
-	NSLog(@"Current Address: %@", URLString);
 	
 	// Login Success
 	if (![URLString isEqualToString:SOLS_LOGIN_URL]) {
