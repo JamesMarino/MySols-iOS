@@ -7,6 +7,9 @@
 
 - (void)attemptLogin;
 
+- (BOOL)usernameIsValid;
+- (BOOL)passwordIsValid;
+- (void)updateResponseLabelWithText:(NSString*)Text;
 
 @end
 
@@ -15,31 +18,72 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	// If you are Logging in, all defaults and KeyChain should be cleared
+	// [self clearDefaults];
+	
 	// Setup Webview
 	self.WebView.delegate = self;
-
-	// Attempt to login
-	[self attemptLogin];
+	
+	// Display Values
+	if ([[NSUserDefaults standardUserDefaults] stringForKey:PROPERTY_VALID_LOGIN]) {
+		
+		// Get Username
+		NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:PROPERTY_USERNAME];
+		
+		// Get Password
+		NSDictionary *data = [KeyChain getDataWithUsername:username];
+		NSData *passwordData = data[(__bridge id)kSecValueData];
+		NSString *password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+		
+		// Set Fields
+		self.UsernameField.text = username;
+		self.PasswordField.text = password;
+		
+		if (([username length] != 0) && ([password length] != 0)) {
+			// Auto-Login
+			[self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+		}
+	}
 	
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
 	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 - (IBAction)LoginPressed:(id)sender
 {
-	// Store Password
-	[KeyChain storeWithUsername:self.UsernameField.text
-				   WithPassword:self.PasswordField.text];
+	// Check Form Inputs / Setup
+	NSString *ErrorMessage = NULL;
+	BOOL UsernameValid = true, PasswordValid = true;
 	
-	// Store Username
-	NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-	[prefrences setObject:self.UsernameField.text forKey:@"Username"];
+	UsernameValid = [self usernameIsValid];
+	PasswordValid = [self passwordIsValid];
 	
-	// Attempt to login
-	[self attemptLogin];
+	if ((UsernameValid == false) && (PasswordValid == false)) {
+		ErrorMessage = @"Password and Username Invalid";
+	} else if (UsernameValid == false) {
+		ErrorMessage = @"Username Invalid";
+	} else if (PasswordValid == false) {
+		ErrorMessage = @"Password Invalid";
+	} else {
+		// Store Password
+		[KeyChain storeWithUsername:self.UsernameField.text
+					   WithPassword:self.PasswordField.text];
+		
+		// Store Username
+		NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
+		[prefrences setObject:self.UsernameField.text forKey:PROPERTY_USERNAME];
+		
+		// All good, Attempt to login
+		[self attemptLogin];
+	}
+	
+	// Print Error Message if there is Error Message
+	if (ErrorMessage != NULL) {
+		self.ResponseText.text = ErrorMessage;
+	}
 }
 
 - (void)attemptLogin
@@ -47,10 +91,8 @@
 	// Setup
 	NSString *username, *password;
 	
-	
 	// Get Username
-	NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-	username = [prefrences stringForKey:@"Username"];
+	username = [[NSUserDefaults standardUserDefaults] stringForKey:PROPERTY_USERNAME];
 	
 	// Get Password
 	NSDictionary *data = [KeyChain getDataWithUsername:username];
@@ -60,22 +102,35 @@
 	NSLog(@"Username: %@", username);
 	NSLog(@"Password: %@", password);
 	
-	if (([password length] <= 0) || ([username length] <= 0)) {
+	// Setup URL
+	NSURL *url = [NSURL URLWithString: SOLS_LOGIN_URL];
+	NSString *body = [NSString stringWithFormat: SOLS_LOGIN_POST, username, password];
 		
-	} else {
+	// Setup Request
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
+	[request setHTTPMethod: @"POST"];
+	[request setHTTPBody: [body dataUsingEncoding: NSUTF8StringEncoding]];
+		
+	// Instantiate Webview
+	[self.WebView loadRequest:request];
 	
-		// Setup URL
-		NSString *URLString = SOLS_LOGIN_URL;
-		NSURL *url = [NSURL URLWithString: URLString];
-		NSString *body = [NSString stringWithFormat: SOLS_LOGIN_POST, username, password];
-		
-		// Setup Request
-		NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
-		[request setHTTPMethod: @"POST"];
-		[request setHTTPBody: [body dataUsingEncoding: NSUTF8StringEncoding]];
-		
-		// Instantiate Webview
-		[self.WebView loadRequest:request];
+}
+
+- (BOOL)usernameIsValid
+{
+	if (self.UsernameField.text.length <= 0) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+- (BOOL)passwordIsValid
+{
+	if (self.PasswordField.text.length <= 0) {
+		return false;
+	} else {
+		return true;
 	}
 }
 
@@ -85,24 +140,45 @@
 	// Get current URL
 	NSString *URLString = [[request URL] absoluteString];
 	
+	NSLog(@"Current Address: %@", URLString);
 	
+	// Login Success
 	if (![URLString isEqualToString:SOLS_LOGIN_URL]) {
 		
+		// Set Valid Credentials to True
+		NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
+		[prefrences setBool:true forKey:PROPERTY_VALID_LOGIN];
+		
 		// Take to Main Page
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-		MainView *mainView = [storyboard instantiateViewControllerWithIdentifier:@"MainWebView"];
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:STORYBOARD_NAME bundle: nil];
+		MainView *mainView = [storyboard instantiateViewControllerWithIdentifier:MAIN_VIEW_NAME];
 		mainView.URL = URLString;
 		[self presentViewController:mainView animated:YES completion:nil];
 		
 	} else {
 		
-		// Say Wrong Password
+		// Inform User
+		if ([self usernameIsValid] || [self passwordIsValid]) {
+			
+			// Wait on User
+			[self.ResponseText setTextColor:[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1]];
+			self.ResponseText.text = @"Working...";
+			
+			// Change Error Text
+			[self performSelector:@selector(updateResponseLabelWithText:)
+					   withObject:@"Incorrect Username Or Password"
+					   afterDelay:1.0];
+		}
 		
 	}
 	
-	NSLog(@"Current Address: %@", URLString);
-	
 	return YES;
+}
+
+- (void)updateResponseLabelWithText:(NSString*)Text
+{
+	[self.ResponseText setTextColor:[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1]];
+	self.ResponseText.text = Text;
 }
 
 @end

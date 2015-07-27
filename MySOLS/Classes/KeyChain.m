@@ -27,7 +27,7 @@
 	// Allow only under unlocked screen
 	keychainItem[(__bridge id)kSecAttrAccessible] = (__bridge id)kSecAttrAccessibleWhenUnlocked;
 	// Store Items
-	keychainItem[(__bridge id)kSecAttrServer] = @"http://thesiteNeedtobeconst.com";
+	keychainItem[(__bridge id)kSecAttrServer] = SOLS_LOGIN_URL;
 	keychainItem[(__bridge id)kSecAttrAccount] = Username;
 	
 	
@@ -78,7 +78,7 @@
 	// Allow only under unlocked screen
 	keychainItem[(__bridge id)kSecAttrAccessible] = (__bridge id)kSecAttrAccessibleWhenUnlocked;
 	// Store Items
-	keychainItem[(__bridge id)kSecAttrServer] = @"http://thesiteNeedtobeconst.com";
+	keychainItem[(__bridge id)kSecAttrServer] = SOLS_LOGIN_URL;
 	keychainItem[(__bridge id)kSecAttrAccount] = Username;
 	
 	
@@ -122,7 +122,7 @@
 		// Allow only under unlocked screen
 		keychainItem[(__bridge id)kSecAttrAccessible] = (__bridge id)kSecAttrAccessibleWhenUnlocked;
 		// Store Items
-		keychainItem[(__bridge id)kSecAttrServer] = @"http://thesiteNeedtobeconst.com";
+		keychainItem[(__bridge id)kSecAttrServer] = SOLS_LOGIN_URL;
 		keychainItem[(__bridge id)kSecAttrAccount] = Username;
 		
 		// Check if this keychain item exists
@@ -130,7 +130,9 @@
 		keychainItem[(__bridge id)kSecReturnAttributes] = (__bridge id)kCFBooleanTrue;
 	}
 	@catch (NSException *exception) {
-		NSLog(@"Exception Thrown");
+		// Error Storing Value
+		
+		NSLog(@"Error Storing Value");
 	}
 	
 	// Get Results
@@ -145,15 +147,18 @@
 	if(status == noErr) {
 		resultDict = (__bridge_transfer NSDictionary *)result;
 		
-		/* Accessing Password
-		NSData *pswd = resultDict[(__bridge id)kSecValueData];
-		NSString *password = [[NSString alloc] initWithData:pswd encoding:NSUTF8StringEncoding];
-		 */
-		
 		return resultDict;
 	} else {
 		return resultDict;
 	}
+}
+
++ (void)deleteAllKeysForSecClass:(CFTypeRef)secClass
+{
+	NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+	[dict setObject:(__bridge id)secClass forKey:(__bridge id)kSecClass];
+	
+	SecItemDelete((__bridge CFDictionaryRef) dict);
 }
 
 @end

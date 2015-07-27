@@ -7,13 +7,26 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+	// Setup View
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:STORYBOARD_NAME bundle:nil];
 	
-	// Set Attempts to 0
-	NSInteger attempts = 0;
-	NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-	[prefrences setInteger:attempts forKey:@"LoginAttempts"];
+	// Check wether last login attempt was succesful
+	BOOL UserValidCredentials = [[NSUserDefaults standardUserDefaults] boolForKey:PROPERTY_VALID_LOGIN];
+	
+	if (UserValidCredentials) {
+		// Take to Main Page - Login There
+		self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:MAIN_VIEW_NAME];
+		
+	} else {
+		// Take to Login Page
+		self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:LOGIN_VIEW_NAME];
+	}
+	
+	// Make Visible !important
+	[self.window makeKeyAndVisible];
 	
 	return YES;
 }

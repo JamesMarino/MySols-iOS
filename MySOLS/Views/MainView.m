@@ -4,9 +4,10 @@
 
 @interface MainView ()
 
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
+- (void)clearDefaults;
 
-- (void)attemptLogin;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -15,24 +16,49 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	// Remove top bar
+	[self setNeedsStatusBarAppearanceUpdate];
+	
 	// Setup Webview
 	self.webView.delegate = self;
+	self.webView.scrollView.bounces = NO;
 	
-	
-	// Setup URL
-	NSString *URLString = self.URL;
-	NSURL *url = [NSURL URLWithString: URLString];
-	
-	// Setup Request
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
-	
-	// Instantiate Webview
-	[self.webView loadRequest:request];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+	[self.spinner startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+	[self.spinner stopAnimating];
+}
+
+- (BOOL)prefersStatusBarHidden {
+	return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	// Check What to do
+	if ([self.URL length] != 0) {
+		// Normal Setup
+		NSURL *url = [NSURL URLWithString: self.URL];
+		
+		// Setup Request
+		NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
+		
+		// Instantiate Webview
+		[self.webView loadRequest:request];
+	} else {
+		[self navigateToLoginPage];
+	}
+}
+
+- (void)didReceiveMemoryWarning
+{
 	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -40,146 +66,48 @@
 	
 	// Get current URL
 	NSString *URLString = [[request URL] absoluteString];
-	
-	// Get Counter
-	NSInteger counter = [[NSUserDefaults standardUserDefaults] integerForKey:@"LoginAttempts"];
-	
-	NSLog(@"Counter: %ld", (long)counter);
-	
+	NSLog(@"URL: %@", URLString);
+
+	// Switch on URL
 	if ([URLString isEqualToString:SOLS_LOGIN_URL]) {
-		
-		// Take to home page
-		NSString * storyboardName = @"Main";
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-		UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-		[self presentViewController:vc animated:YES completion:nil];
-		
-		/*
-		if (counter < 1) {
-			// Attempt to login again
-			[self attemptLogin];
-			
-			// Increase Counter
-			NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-			[prefrences setInteger:(counter+1) forKey:@"LoginAttempts"];
-		} else {
-			// Enough Tries
-			
-			// Reset Counter
-			NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-			[prefrences setInteger:0 forKey:@"LoginAttempts"];
-			
-			// Take to home page
-			NSString * storyboardName = @"Main";
-			UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-			UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-			[self presentViewController:vc animated:YES completion:nil];
-			
-			NSLog(@"Going Home...");
-		}
-		*/
-		
-		/*
-		// Take to home page
-		NSString * storyboardName = @"Main";
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-		UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-		[self presentViewController:vc animated:YES completion:nil];
-		
-		NSLog(@"Going Home...");
-		 */
-		
-		/*
-		// Increment Counter
-		NSInteger counter = [[NSUserDefaults standardUserDefaults] integerForKey:@"LoginAttempts"];
-		
-		if (counter > 1) {
-			// Take to home page
-			NSString * storyboardName = @"Main";
-			UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-			UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-			[self presentViewController:vc animated:YES completion:nil];
-			
-			NSLog(@"Going Home...");
-			
-			// Set counter to 0
-			NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-			[prefrences setInteger:0 forKey:@"LoginAttempts"];
-			
-		} else {
-			// Give it another go
-			[self attemptLogin];
-			NSLog(@"Another Login Attempt...");
-			
-			// Add attempts
-			NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-			[prefrences setInteger:(counter+1) forKey:@"LoginAttempts"];
-		}
-		*/
-		 
-	} else {
-		
-		NSLog(@"new url");
-		
-		/*
-		// Set counter to 0
-		NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-		[prefrences setInteger:0 forKey:@"LoginAttempts"];
-		 */
-		
-		/*
-		// Redirect to webview
-		NSString * storyboardName = @"Main";
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-		UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainWebView"];
-		[self presentViewController:vc animated:YES completion:nil];
-		*/
-		 
+		[self navigateToLoginPage];
+	} else if ([URLString rangeOfString:SOLS_LOGOUT_URL].location != NSNotFound) {
+		[self clearDefaults];
+		[self navigateToLoginPage];
+	} else if ([URLString rangeOfString:SOLS_ALTERNATIVE_LOGIN_URL].location != NSNotFound) {
+		[self navigateToLoginPage];
 	}
 	
-	// if logon URL
-		// try log in once, if no luck, take back to 1st page
-		// increment counter
-	
-	// else
-		// set counter 0
-	
-	
-	NSLog(@"Currently At: %@", URLString);
+	// Check for outside URL's
+	if (([URLString rangeOfString:SOLS_BASE_URL].location == NSNotFound) ||
+		([URLString rangeOfString:SOLS_SUBJECT_DB_URL].location != NSNotFound)) {
+		NSURL *url = [NSURL URLWithString:URLString];
+		[[UIApplication sharedApplication] openURL:url];
+		
+		// Go Back
+		if ([webView canGoBack]) {
+			[webView goBack];
+		}
+	}
 	
 	return YES;
 }
 
-- (void)attemptLogin
+- (void)navigateToLoginPage
 {
-	// Setup
-	NSString *username, *password;
+	// Take to Login page
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:STORYBOARD_NAME bundle: nil];
+	UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:LOGIN_VIEW_NAME];
+	[self presentViewController:vc animated:NO completion:nil];
+}
+
+- (void)clearDefaults
+{
+	// Reset User Defaults
+	[NSUserDefaults resetStandardUserDefaults];
 	
-	
-	// Get Username
-	NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
-	username = [prefrences stringForKey:@"Username"];
-	
-	// Get Password
-	NSDictionary *data = [KeyChain getDataWithUsername:username];
-	NSData *passwordData = data[(__bridge id)kSecValueData];
-	password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
-	
-	NSLog(@"Username: %@", username);
-	NSLog(@"Password: %@", password);
-	
-	// Setup URL
-	NSString *URLString = SOLS_LOGIN_URL;
-	NSURL *url = [NSURL URLWithString: URLString];
-	NSString *body = [NSString stringWithFormat: SOLS_LOGIN_POST, username, password];
-	
-	// Setup Request
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url];
-	[request setHTTPMethod: @"POST"];
-	[request setHTTPBody: [body dataUsingEncoding: NSUTF8StringEncoding]];
-	
-	// Instantiate Webview
-	[self.webView loadRequest:request];
+	// Reset Keychain
+	[KeyChain deleteAllKeysForSecClass:kSecClassInternetPassword];
 }
 
 @end

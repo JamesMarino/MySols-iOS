@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login-->
+        <!--LoginView-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="Login" id="vXZ-lx-hvc" userLabel="Login" customClass="LoginView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="vXZ-lx-hvc" userLabel="LoginView" customClass="LoginView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,15 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1IP-Af-hJm" userLabel="UsernameForm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1IP-Af-hJm" userLabel="UsernameForm">
                                 <rect key="frame" x="16" y="109" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-Wt-mOM" userLabel="PasswordForm">
-                                <rect key="frame" x="16" y="147" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPD-6y-iF2" userLabel="LoginAction">
                                 <rect key="frame" x="16" y="218" width="568" height="30"/>
@@ -45,21 +40,38 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uL6-ce-avu">
-                                <rect key="frame" x="0.0" y="315" width="240" height="128"/>
+                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uL6-ce-avu">
+                                <rect key="frame" x="0.0" y="400" width="219" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxN-qK-XOt" userLabel="ResponseText">
+                                <rect key="frame" x="0.0" y="289" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XQc-Cr-jNH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-Wt-mOM" userLabel="PasswordForm">
+                                <rect key="frame" x="16" y="147" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PPD-6y-iF2" firstAttribute="top" secondItem="fyi-Wt-mOM" secondAttribute="bottom" constant="41" id="4J3-Ha-g9a"/>
                             <constraint firstItem="PPD-6y-iF2" firstAttribute="leading" secondItem="3QX-Kd-PFE" secondAttribute="leading" id="63N-ag-De0"/>
+                            <constraint firstItem="DxN-qK-XOt" firstAttribute="top" secondItem="PPD-6y-iF2" secondAttribute="bottom" constant="41" id="6Uj-AG-FZV"/>
                             <constraint firstItem="3QX-Kd-PFE" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="AS3-lu-EYW"/>
                             <constraint firstItem="fyi-Wt-mOM" firstAttribute="trailing" secondItem="1IP-Af-hJm" secondAttribute="trailing" id="FOF-Yu-wG0"/>
                             <constraint firstItem="fyi-Wt-mOM" firstAttribute="leading" secondItem="1IP-Af-hJm" secondAttribute="leading" id="GZE-p5-Hi2"/>
                             <constraint firstItem="PPD-6y-iF2" firstAttribute="leading" secondItem="fyi-Wt-mOM" secondAttribute="leading" id="OJ8-JQ-b64"/>
+                            <constraint firstItem="DxN-qK-XOt" firstAttribute="centerX" secondItem="PPD-6y-iF2" secondAttribute="centerX" id="Rdm-hL-ogL"/>
                             <constraint firstItem="fyi-Wt-mOM" firstAttribute="top" secondItem="1IP-Af-hJm" secondAttribute="bottom" constant="8" symbolic="YES" id="bG8-i9-RjQ"/>
                             <constraint firstItem="3QX-Kd-PFE" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="d52-4T-QKu"/>
+                            <constraint firstItem="DxN-qK-XOt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="dUh-Zs-B9E"/>
                             <constraint firstItem="1IP-Af-hJm" firstAttribute="top" secondItem="3QX-Kd-PFE" secondAttribute="bottom" constant="8" symbolic="YES" id="dlK-6S-2HJ"/>
                             <constraint firstItem="3QX-Kd-PFE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ep3-qJ-bFI"/>
                             <constraint firstItem="PPD-6y-iF2" firstAttribute="trailing" secondItem="fyi-Wt-mOM" secondAttribute="trailing" id="mSD-wg-JN5"/>
@@ -67,7 +79,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LoginButton" destination="PPD-6y-iF2" id="aGo-ap-Fmf"/>
                         <outlet property="PasswordField" destination="fyi-Wt-mOM" id="XUu-7Q-MNJ"/>
+                        <outlet property="ResponseText" destination="DxN-qK-XOt" id="03Y-Qw-Y4B"/>
                         <outlet property="UsernameField" destination="1IP-Af-hJm" id="W3i-9h-YjA"/>
                         <outlet property="WebView" destination="uL6-ce-avu" id="T3L-KQ-TNj"/>
                     </connections>
@@ -87,26 +101,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB" userLabel="MainWebView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="64M-sy-YiV" userLabel="ActivityIndicator">
+                                <rect key="frame" x="275" y="209" width="50" height="50"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="89y-0A-Gca"/>
+                                    <constraint firstAttribute="width" constant="50" id="isa-Wu-JR9"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="7rp-FM-Rab" secondAttribute="bottom" id="7k4-L2-yax"/>
-                            <constraint firstItem="CBd-hv-DfF" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" id="Be3-XS-2uE"/>
-                            <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" id="DVF-nn-Bpx"/>
-                            <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="EP6-iN-aXA"/>
+                            <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="Igk-27-9Ag" secondAttribute="top" id="1MN-rE-88e"/>
+                            <constraint firstItem="CBd-hv-DfF" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" id="3BO-E4-IiS"/>
+                            <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="Kll-Vx-aBs"/>
+                            <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" id="gZJ-ni-HvA"/>
+                            <constraint firstItem="64M-sy-YiV" firstAttribute="top" secondItem="7rp-FM-Rab" secondAttribute="bottom" constant="189" id="gs8-51-tZr"/>
+                            <constraint firstItem="64M-sy-YiV" firstAttribute="centerX" secondItem="EGT-JL-dTB" secondAttribute="centerX" id="kqT-cv-1cX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="64M-sy-YiV" id="MQg-XT-faR"/>
                         <outlet property="webView" destination="EGT-JL-dTB" id="lur-hl-i4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ka-hD-vUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="418"/>
+            <point key="canvasLocation" x="1107" y="406"/>
         </scene>
     </scenes>
 </document>
