@@ -18,6 +18,8 @@
 		1AC17D751B632C6500AD5C52 /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D741B632C6500AD5C52 /* KeyChain.m */; };
 		1AC17D7A1B633DF400AD5C52 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D791B633DF400AD5C52 /* MainView.m */; };
 		1AC17D7D1B6365B300AD5C52 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC17D7C1B6365B300AD5C52 /* Constants.m */; };
+		AA79580D1B6C80CC009ABBE8 /* FlamaLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA79580C1B6C80CC009ABBE8 /* FlamaLight.otf */; };
+		AA7958131B6C897C009ABBE8 /* gravvity_sml.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7958121B6C897C009ABBE8 /* gravvity_sml.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		1AC17D791B633DF400AD5C52 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Views/MainView.m; sourceTree = "<group>"; };
 		1AC17D7B1B634D8600AD5C52 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
 		1AC17D7C1B6365B300AD5C52 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Constants.m; sourceTree = "<group>"; };
+		AA79580C1B6C80CC009ABBE8 /* FlamaLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FlamaLight.otf; path = Support/Fonts/FlamaLight.otf; sourceTree = "<group>"; };
+		AA7958121B6C897C009ABBE8 /* gravvity_sml.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gravvity_sml.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		1AC17D321B63153500AD5C52 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				AA79580B1B6C809E009ABBE8 /* Fonts */,
 				1AC17D5E1B63168300AD5C52 /* Info.plist */,
 				1AC17D5F1B63168300AD5C52 /* main.m */,
 				1AC17D771B633BF700AD5C52 /* Support.md */,
@@ -97,6 +102,7 @@
 		1AC17D5A1B63164800AD5C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA7958121B6C897C009ABBE8 /* gravvity_sml.png */,
 				1A6E5AE51B660CC100461F86 /* UOW.png */,
 				1AC17D581B63164000AD5C52 /* Images.xcassets */,
 			);
@@ -149,6 +155,14 @@
 				1AC17D741B632C6500AD5C52 /* KeyChain.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		AA79580B1B6C809E009ABBE8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AA79580C1B6C80CC009ABBE8 /* FlamaLight.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +227,8 @@
 				1A6E5AE61B660CC100461F86 /* UOW.png in Resources */,
 				1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */,
 				1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */,
+				AA7958131B6C897C009ABBE8 /* gravvity_sml.png in Resources */,
+				AA79580D1B6C80CC009ABBE8 /* FlamaLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
