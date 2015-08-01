@@ -24,7 +24,7 @@
                     <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="gravvity_sml.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-OU-iD4">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GravvityLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-OU-iD4" userLabel="GravvityLogo">
                     <rect key="frame" x="211" y="399" width="58" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="58" id="d2K-3w-nUS"/>
@@ -46,6 +46,6 @@
         </view>
     </objects>
     <resources>
-        <image name="gravvity_sml.png" width="182" height="109"/>
+        <image name="GravvityLogo.png" width="182" height="109"/>
     </resources>
 </document>
