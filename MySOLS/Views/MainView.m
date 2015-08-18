@@ -9,6 +9,8 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+- (IBAction)HomePress:(id)sender;
+- (IBAction)RefreshPress:(id)sender;
 
 @end
 
@@ -18,7 +20,7 @@
 	[super viewDidLoad];
 	
 	// Remove top bar
-	[self setNeedsStatusBarAppearanceUpdate];
+	// [self setNeedsStatusBarAppearanceUpdate];
 	
 	// Setup Webview
 	self.webView.delegate = self;
@@ -37,7 +39,12 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-	return YES;
+	return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -137,4 +144,13 @@
 	[alert show];
 }
 
+- (IBAction)HomePress:(id)sender
+{
+	[self navigateToLoginPage];
+}
+
+- (IBAction)RefreshPress:(id)sender
+{
+	[self.webView reload];
+}
 @end

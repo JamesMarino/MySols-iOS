@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -159,59 +161,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59H-1w-7hX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59H-1w-7hX" userLabel="RedBackground">
                                 <rect key="frame" x="0.0" y="0.0" width="648" height="600"/>
                                 <subviews>
-                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB" userLabel="MainWebView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="600" id="s4i-E3-m5N"/>
-                                        </constraints>
-                                    </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iee-8h-tAp">
-                                        <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                        <rect key="frame" x="0.0" y="555" width="300" height="45"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="yUj-AQ-6e3"/>
+                                            <constraint firstAttribute="height" constant="45" id="tsC-9f-Jvx"/>
                                         </constraints>
                                         <state key="normal" title="Home">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="HomePress:" destination="b8D-I5-XL5" eventType="touchUpInside" id="sTK-NJ-gjd"/>
+                                        </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq9-I8-rPl">
+                                        <rect key="frame" x="300" y="555" width="300" height="45"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Refresh">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="RefreshPress:" destination="b8D-I5-XL5" eventType="touchUpInside" id="cBf-Jb-XYU"/>
+                                        </connections>
+                                    </button>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB" userLabel="MainWebView">
+                                        <rect key="frame" x="0.0" y="19" width="600" height="532"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </webView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="64M-sy-YiV" userLabel="ActivityIndicator">
-                                        <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                        <rect key="frame" x="300" y="275" width="0.0" height="50"/>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="BpK-gk-nuv"/>
-                                            <constraint firstAttribute="height" constant="50" id="d1C-Jv-lS9"/>
+                                            <constraint firstAttribute="height" constant="50" id="8DL-9Y-TdX"/>
+                                            <constraint firstAttribute="width" constant="50" id="eGN-PQ-vKK"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="eGN-PQ-vKK"/>
+                                            </mask>
+                                        </variation>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.7803921568627451" green="0.14117647058823529" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" constant="48" id="6q7-Sk-FT4"/>
-                                    <constraint firstItem="iee-8h-tAp" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" constant="4" id="MBG-WG-U1Z"/>
-                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="trailing" secondItem="iee-8h-tAp" secondAttribute="trailing" id="NVt-bl-Xen"/>
-                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="59H-1w-7hX" secondAttribute="leading" id="QkP-v9-Y71"/>
-                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="iee-8h-tAp" secondAttribute="leading" id="X7A-ng-uZI"/>
-                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="59H-1w-7hX" secondAttribute="top" id="ZSR-4p-ydL"/>
-                                    <constraint firstAttribute="bottom" secondItem="iee-8h-tAp" secondAttribute="bottom" id="ic8-sR-fff"/>
-                                    <constraint firstItem="64M-sy-YiV" firstAttribute="centerY" secondItem="59H-1w-7hX" secondAttribute="centerY" id="js0-ka-8bL"/>
-                                    <constraint firstItem="64M-sy-YiV" firstAttribute="centerX" secondItem="iee-8h-tAp" secondAttribute="centerX" id="rBh-4S-hEq"/>
+                                    <constraint firstItem="iee-8h-tAp" firstAttribute="baseline" secondItem="rq9-I8-rPl" secondAttribute="firstBaseline" id="0Ja-nz-ycL"/>
+                                    <constraint firstItem="64M-sy-YiV" firstAttribute="centerY" secondItem="59H-1w-7hX" secondAttribute="centerY" id="4nS-9y-RHR"/>
+                                    <constraint firstItem="iee-8h-tAp" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" constant="4" id="C7P-sM-WxC"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="59H-1w-7hX" secondAttribute="leading" id="Ecw-nB-CrP"/>
+                                    <constraint firstAttribute="bottom" secondItem="iee-8h-tAp" secondAttribute="bottom" id="Hlp-Zd-VpH"/>
+                                    <constraint firstItem="rq9-I8-rPl" firstAttribute="leading" secondItem="iee-8h-tAp" secondAttribute="trailing" id="J6W-bh-ujJ"/>
+                                    <constraint firstItem="iee-8h-tAp" firstAttribute="leading" secondItem="EGT-JL-dTB" secondAttribute="leading" id="VrB-IG-Vxl"/>
+                                    <constraint firstItem="64M-sy-YiV" firstAttribute="leading" secondItem="rq9-I8-rPl" secondAttribute="leading" id="a4E-ed-500"/>
+                                    <constraint firstItem="64M-sy-YiV" firstAttribute="trailing" secondItem="iee-8h-tAp" secondAttribute="trailing" id="aMw-oP-KoY"/>
+                                    <constraint firstItem="rq9-I8-rPl" firstAttribute="top" secondItem="iee-8h-tAp" secondAttribute="top" id="dPz-Y2-73t"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="59H-1w-7hX" secondAttribute="top" constant="19" id="ehu-g3-bgM"/>
+                                    <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" constant="48" id="f6O-eo-gbh"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="trailing" secondItem="rq9-I8-rPl" secondAttribute="trailing" id="h1Z-1D-wpW"/>
+                                    <constraint firstItem="rq9-I8-rPl" firstAttribute="baseline" secondItem="iee-8h-tAp" secondAttribute="firstBaseline" id="m5Z-3X-EsJ"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="centerX" secondItem="64M-sy-YiV" secondAttribute="centerX" id="rjP-xc-fgx"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWf-3x-sm0" userLabel="TopBlackBar">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <color key="backgroundColor" white="0.13" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-64" id="AWI-cI-C88"/>
-                            <constraint firstItem="59H-1w-7hX" firstAttribute="bottom" secondItem="CBd-hv-DfF" secondAttribute="top" id="Be8-VM-VtI"/>
-                            <constraint firstItem="59H-1w-7hX" firstAttribute="top" secondItem="Igk-27-9Ag" secondAttribute="top" id="CGV-up-egn"/>
-                            <constraint firstAttribute="trailing" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-48" id="HDx-c0-AE1"/>
-                            <constraint firstItem="59H-1w-7hX" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="zJw-3b-IAw"/>
+                            <constraint firstItem="hWf-3x-sm0" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="156-lA-HiJ"/>
+                            <constraint firstItem="hWf-3x-sm0" firstAttribute="top" secondItem="Igk-27-9Ag" secondAttribute="top" id="Cdx-uf-bYe"/>
+                            <constraint firstItem="59H-1w-7hX" firstAttribute="bottom" secondItem="CBd-hv-DfF" secondAttribute="top" id="W0g-4x-Ekm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-64" id="Yev-dQ-a8q"/>
+                            <constraint firstItem="hWf-3x-sm0" firstAttribute="leading" secondItem="59H-1w-7hX" secondAttribute="leading" id="bRw-gS-HEF"/>
+                            <constraint firstAttribute="trailing" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-48" id="kCt-nA-zE4"/>
+                            <constraint firstItem="hWf-3x-sm0" firstAttribute="bottom" secondItem="7rp-FM-Rab" secondAttribute="bottom" id="m0Z-RW-asp"/>
+                            <constraint firstItem="hWf-3x-sm0" firstAttribute="top" secondItem="59H-1w-7hX" secondAttribute="top" id="qGB-4z-kWq"/>
+                            <constraint firstAttribute="trailing" secondItem="hWf-3x-sm0" secondAttribute="trailing" id="yKh-gE-fTX"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="spinner" destination="64M-sy-YiV" id="MQg-XT-faR"/>
                         <outlet property="webView" destination="EGT-JL-dTB" id="lur-hl-i4Z"/>
@@ -219,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ka-hD-vUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="435"/>
+            <point key="canvasLocation" x="1110" y="479"/>
         </scene>
     </scenes>
     <resources>
