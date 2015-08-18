@@ -2,6 +2,7 @@
 #include "KeyChain.h"
 #include "Constants.h"
 #include "MainView.h"
+#import "Reachability.h"
 
 @interface LoginView ()
 
@@ -10,6 +11,8 @@
 - (BOOL)usernameIsValid;
 - (BOOL)passwordIsValid;
 - (void)updateResponseLabelWithText:(NSString*)Text;
+- (BOOL)connected;
+- (void)alertOffline;
 
 @end
 
@@ -49,8 +52,14 @@
 		self.PasswordField.text = password;
 		
 		if (([username length] != 0) && ([password length] != 0)) {
-			// Auto-Login
-			[self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+			
+			// Check if connected to internet
+			if ([self connected]) {
+				// Auto-Login
+				[self.LoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+			} else {
+				[self alertOffline];
+			}
 		}
 	}
 	
@@ -110,8 +119,14 @@
 		NSUserDefaults *prefrences = [NSUserDefaults standardUserDefaults];
 		[prefrences setObject:self.UsernameField.text forKey:PROPERTY_USERNAME];
 		
-		// All good, Attempt to login
-		[self attemptLogin];
+		// Check if connected to internet
+		if ([self connected]) {
+			// Auto-Login
+			// All good, Attempt to login
+			[self attemptLogin];
+		} else {
+			[self alertOffline];
+		}
 	}
 	
 	// Print Error Message if there is Error Message
@@ -208,6 +223,23 @@
 {
 	[self.ResponseText setTextColor:[UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1]];
 	self.ResponseText.text = Text;
+}
+
+- (BOOL)connected
+{
+	Reachability *reachability = [Reachability reachabilityForInternetConnection];
+	NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+	return networkStatus != NotReachable;
+}
+
+- (void)alertOffline
+{
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+													message:@"You are offline and have been logged out. Please check your internet connection"
+												   delegate:nil
+										  cancelButtonTitle:@"Ok"
+										  otherButtonTitles:nil];
+	[alert show];
 }
 
 @end
