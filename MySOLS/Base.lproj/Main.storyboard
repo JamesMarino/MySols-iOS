@@ -159,27 +159,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB" userLabel="MainWebView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="64M-sy-YiV" userLabel="ActivityIndicator">
-                                <rect key="frame" x="275" y="209" width="50" height="50"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59H-1w-7hX">
+                                <rect key="frame" x="0.0" y="0.0" width="648" height="600"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGT-JL-dTB" userLabel="MainWebView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="600" id="s4i-E3-m5N"/>
+                                        </constraints>
+                                    </webView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iee-8h-tAp">
+                                        <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="yUj-AQ-6e3"/>
+                                        </constraints>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="64M-sy-YiV" userLabel="ActivityIndicator">
+                                        <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="BpK-gk-nuv"/>
+                                            <constraint firstAttribute="height" constant="50" id="d1C-Jv-lS9"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7803921568627451" green="0.14117647058823529" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="89y-0A-Gca"/>
-                                    <constraint firstAttribute="width" constant="50" id="isa-Wu-JR9"/>
+                                    <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" constant="48" id="6q7-Sk-FT4"/>
+                                    <constraint firstItem="iee-8h-tAp" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" constant="4" id="MBG-WG-U1Z"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="trailing" secondItem="iee-8h-tAp" secondAttribute="trailing" id="NVt-bl-Xen"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="59H-1w-7hX" secondAttribute="leading" id="QkP-v9-Y71"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="iee-8h-tAp" secondAttribute="leading" id="X7A-ng-uZI"/>
+                                    <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="59H-1w-7hX" secondAttribute="top" id="ZSR-4p-ydL"/>
+                                    <constraint firstAttribute="bottom" secondItem="iee-8h-tAp" secondAttribute="bottom" id="ic8-sR-fff"/>
+                                    <constraint firstItem="64M-sy-YiV" firstAttribute="centerY" secondItem="59H-1w-7hX" secondAttribute="centerY" id="js0-ka-8bL"/>
+                                    <constraint firstItem="64M-sy-YiV" firstAttribute="centerX" secondItem="iee-8h-tAp" secondAttribute="centerX" id="rBh-4S-hEq"/>
                                 </constraints>
-                            </activityIndicatorView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EGT-JL-dTB" firstAttribute="top" secondItem="Igk-27-9Ag" secondAttribute="top" id="1MN-rE-88e"/>
-                            <constraint firstItem="CBd-hv-DfF" firstAttribute="top" secondItem="EGT-JL-dTB" secondAttribute="bottom" id="3BO-E4-IiS"/>
-                            <constraint firstItem="EGT-JL-dTB" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="Kll-Vx-aBs"/>
-                            <constraint firstAttribute="trailing" secondItem="EGT-JL-dTB" secondAttribute="trailing" id="gZJ-ni-HvA"/>
-                            <constraint firstItem="64M-sy-YiV" firstAttribute="top" secondItem="7rp-FM-Rab" secondAttribute="bottom" constant="189" id="gs8-51-tZr"/>
-                            <constraint firstItem="64M-sy-YiV" firstAttribute="centerX" secondItem="EGT-JL-dTB" secondAttribute="centerX" id="kqT-cv-1cX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-64" id="AWI-cI-C88"/>
+                            <constraint firstItem="59H-1w-7hX" firstAttribute="bottom" secondItem="CBd-hv-DfF" secondAttribute="top" id="Be8-VM-VtI"/>
+                            <constraint firstItem="59H-1w-7hX" firstAttribute="top" secondItem="Igk-27-9Ag" secondAttribute="top" id="CGV-up-egn"/>
+                            <constraint firstAttribute="trailing" secondItem="59H-1w-7hX" secondAttribute="trailing" constant="-48" id="HDx-c0-AE1"/>
+                            <constraint firstItem="59H-1w-7hX" firstAttribute="leading" secondItem="Igk-27-9Ag" secondAttribute="leading" id="zJw-3b-IAw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -189,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ka-hD-vUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107" y="406"/>
+            <point key="canvasLocation" x="1130" y="435"/>
         </scene>
     </scenes>
     <resources>
