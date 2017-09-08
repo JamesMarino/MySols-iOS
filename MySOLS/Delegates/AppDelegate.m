@@ -37,8 +37,36 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {}
-
 - (void)applicationWillTerminate:(UIApplication *)application {}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    
+    UIAlertView *newAppAlert = [[UIAlertView alloc] initWithTitle:@"MySOLS Decommission"
+                                                          message:@"The new MyUOW App is now Available with SOLS login support, MySOLS won't be available anymore"
+                                                         delegate:self
+                                                cancelButtonTitle:@"App Store"
+                                                otherButtonTitles:@"Cancel", nil];
+    [newAppAlert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    enum buttons {
+        Ok = 0,
+        Cancel = 1
+    };
+    
+    if (buttonIndex == Cancel) {
+        NSLog(@"Canceled");
+    } else if (buttonIndex == Ok) {
+        
+        NSString* myUOWStoreLink = @"https://itunes.apple.com/au/app/myuow/id821928913";
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:myUOWStoreLink]];
+
+    }
+}
 
 @end

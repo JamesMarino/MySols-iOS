@@ -10,7 +10,6 @@
 		1A6E5AE61B660CC100461F86 /* UOW.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E5AE51B660CC100461F86 /* UOW.png */; };
 		1A7818951B8321EF009C9295 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7818941B8321EF009C9295 /* SystemConfiguration.framework */; };
 		1A7818981B832492009C9295 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7818971B832492009C9295 /* Reachability.m */; };
-		1A9DB73B1B6C93F700118AAD /* GravvityLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9DB73A1B6C93F700118AAD /* GravvityLogo.png */; };
 		1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D3C1B63153500AD5C52 /* Main.storyboard */; };
 		1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D411B63153500AD5C52 /* LaunchScreen.xib */; };
 		1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC17D581B63164000AD5C52 /* Images.xcassets */; };
@@ -29,7 +28,6 @@
 		1A7818941B8321EF009C9295 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1A7818961B832492009C9295 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability.h; sourceTree = "<group>"; };
 		1A7818971B832492009C9295 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability.m; sourceTree = "<group>"; };
-		1A9DB73A1B6C93F700118AAD /* GravvityLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GravvityLogo.png; path = Images/GravvityLogo.png; sourceTree = "<group>"; };
 		1AC17D2F1B63153500AD5C52 /* MySOLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySOLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC17D3D1B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AC17D421B63153500AD5C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		1AC17D5A1B63164800AD5C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1A9DB73A1B6C93F700118AAD /* GravvityLogo.png */,
 				1A6E5AE51B660CC100461F86 /* UOW.png */,
 				1AC17D581B63164000AD5C52 /* Images.xcassets */,
 			);
@@ -234,7 +231,6 @@
 			files = (
 				1AC17D3E1B63153500AD5C52 /* Main.storyboard in Resources */,
 				1A6E5AE61B660CC100461F86 /* UOW.png in Resources */,
-				1A9DB73B1B6C93F700118AAD /* GravvityLogo.png in Resources */,
 				1AC17D591B63164000AD5C52 /* Images.xcassets in Resources */,
 				1AC17D431B63153500AD5C52 /* LaunchScreen.xib in Resources */,
 				AA79580D1B6C80CC009ABBE8 /* FlamaLight.otf in Resources */,

@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="FlamaLight.otf">
+        <array key="FlamaLight.otf">
             <string>Flama-Light</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,22 +26,13 @@
                         <constraint firstAttribute="height" constant="43" id="uc7-vE-xrT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Flama-Light" family="Flama" pointSize="30"/>
-                    <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="textColor" red="0.9949270486831665" green="0.9899754524230957" blue="0.99009978771209717" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GravvityLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-OU-iD4" userLabel="GravvityLogo">
-                    <rect key="frame" x="211" y="399" width="58" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="58" id="d2K-3w-nUS"/>
-                        <constraint firstAttribute="height" constant="34" id="l4w-hg-kz8"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.054901960784313725" green="0.46666666666666667" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.054901960784313725" green="0.46666666666666667" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Bjv-OU-iD4" secondAttribute="bottom" constant="47" id="64j-z4-yfL"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jeq-q3-Oqc"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="Bjv-OU-iD4" secondAttribute="centerX" id="Lug-VS-PYq"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Qoj-it-98B"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="140" id="ysc-5S-ohA"/>
             </constraints>
@@ -45,7 +41,4 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="GravvityLogo.png" width="182" height="109"/>
-    </resources>
 </document>
